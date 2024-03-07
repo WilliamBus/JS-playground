@@ -8,5 +8,7 @@ console.log (num2)
 var num3 = 30
 console.log (num3)
 /*
-
+"learnt" about const, let and var and that var isnt used anymore because it is an old version of const and let combined
+:)
+(already knew about this stuff)
 */
