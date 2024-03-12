@@ -171,25 +171,38 @@
 // }
 // console.log(checkArraySum([0, 1, 5]))
 
-//TODO - Write a function that an array of items returns only integers.
-//NOTE - array = ["will", 5, 6, 2, "pizza"] --> [5, 6, 2].
-//NOTE - declare function and nammed it.
-function onlyIntegers(arr) {
-    //NOTE - declared variable integer using let to an empty array.
-    let integer = []
-    //NOTE - stared for loop so it can run through the array finding all the integers.
-    for(let i = 0; i < arr.length; i++) {
-        //NOTE - uses the object "Number" with the attached functionality "isInteger" to search through all the array finding all the integers and returns a boolean value.
-        if(Number.isInteger(arr[i])) {
-            //NOTE - adds all these numbers found in the array to the end of the empty array we made earlier up.
-            integer.push(arr[i])
-            //NOTE - end of if.
-        }
-        //NOTE - end of for.
-    }
-    //NOTE - returns our variable called integer.
-    return integer
-}
-//NOTE - runs onlyIntegers function and prints out the array written in the parrameter.
-console.log(onlyIntegers(["will", 5, 6, "dog", 2, "pizza", 8]))
+// //TODO - Write a function that an array of items returns only integers.
+// //NOTE - array = ["will", 5, 6, 2, "pizza"] --> [5, 6, 2].
+// //NOTE - declare function and nammed it.
+// function onlyIntegers(arr) {
+//     //NOTE - declared variable integer using let to an empty array.
+//     let integer = []
+//     //NOTE - stared for loop so it can run through the array finding all the integers.
+//     for(let i = 0; i < arr.length; i++) {
+//         //NOTE - uses the object "Number" with the attached functionality "isInteger" to search through all the array finding all the integers and returns a boolean value.
+//         if(Number.isInteger(arr[i])) {
+//             //NOTE - adds all these numbers found in the array to the end of the empty array we made earlier up.
+//             integer.push(arr[i])
+//             //NOTE - end of if.
+//         }
+//         //NOTE - end of for.
+//     }
+//     //NOTE - returns our variable called integer.
+//     return integer
+// }
+// //NOTE - runs onlyIntegers function and prints out the array written in the parrameter.
+// console.log(onlyIntegers(["will", 5, 6, "dog", 2, "pizza", 8]))
 
+//TODO - Write a function that takes an array with numbers and return an array with the elements multiplied by 2.
+//NOTE - arrayByTwo([2,5,4]) --> [4,10,8]
+function operationMultiply(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        arr[i] *= 2
+    }
+    return arr
+}
+console.log(operationMultiply([3, 4, 2, 6]))
+
+//TODO - Write the above multiplication stuff in one line
+const arrayByTwo = (arr) => arr.map(el => el * 2)
+console.log(arrayByTwo([2,5,4]))
