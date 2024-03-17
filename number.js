@@ -193,16 +193,60 @@
 // //NOTE - runs onlyIntegers function and prints out the array written in the parrameter.
 // console.log(onlyIntegers(["will", 5, 6, "dog", 2, "pizza", 8]))
 
-//TODO - Write a function that takes an array with numbers and return an array with the elements multiplied by 2.
-//NOTE - arrayByTwo([2,5,4]) --> [4,10,8]
-function operationMultiply(arr) {
-    for (let i = 0; i < arr.length; i++) {
-        arr[i] *= 2
-    }
-    return arr
-}
-console.log(operationMultiply([3, 4, 2, 6]))
+// // TODO - Write a function that takes an array with numbers and return an array with the elements multiplied by 2.
+// // NOTE - arrayByTwo([2,5,4]) --> [4,10,8].
+// function operationMultiply(arr) {
+//     for (let i = 0; i < arr.length; i++) {
+//         arr[i] *= 2
+//     }
+//     return arr
+// }
+// console.log(operationMultiply([3, 4, 2, 6]))
 
-//TODO - Write the above multiplication stuff in one line
-const arrayByTwo = (arr) => arr.map(el => el * 2)
-console.log(arrayByTwo([2,5,4]))
+// //TODO - Write the above multiplication stuff in one line.
+// const arrayByTwo = (arr) => arr.map(el => el * 2)
+// console.log(arrayByTwo([2,5,4]))
+
+// //SECTION - Game.
+// //TODO - Create a function which takes two strings (p1 & p2) ad aruguments and returns a string stating the winner (Rock, Paper or Scissors).
+
+// //ANCHOR - Game consitions.
+// //NOTE - If p1 wins return the string "The winner is p1".
+// //NOTE - If p2 wins return the string "The winner is p2". 
+// //NOTE - if they are the same then return "Its a draw".
+
+// function rps(p1, p2) {
+//     //NOTE - Draw.
+//     if(p1 === p2) return 'It\'\s a draw'
+//     //NOTE - P1 Win.
+//     else if (p1 === 'Rock' && p2 === 'Scissors') return 'The winner is p1'
+//     else if (p1 === 'Paper' && p2 === 'Rock') return 'The winner is p1'
+//     else if (p1 === 'Scissors' && p2 === 'Paper') return 'The winner is p1' 
+
+//     //NOTE - P2 Win.
+//     else return 'The winner is p2'
+// }
+// console.log (rps('Paper', 'Paper'))
+
+// //ANCHOR - ES6 JavaScript.
+// function rpsTwo(p1, p2) {
+//     let obj = {
+//         Rock: 'Sciccors',
+//         Scissors: 'Paper',
+//         Paper: 'Rock'
+//     }
+//     return p1 === p2 ? 'It\'\s a draw' : obj[p1] === p2 ? 'The winer is P1' : 'The winner is P2'
+// }
+
+// console.log(rpsTwo('Paper', 'Scissors'))
+
+//ANCHOR - JS buil in function includes().
+function rpsThree(p1, p2) {
+    const wins = ['RockScissors', 'PaperRock', 'ScissorsPaper']
+
+    //NOTE - this line says: if the variable p1 is the exact same as the variable p2 it prints out "It's a draw" .
+    //NOTE - otherwise if it is they are not the same then it adds them together and says the winner is p1 or p2.
+    return p1 === p2 ? 'It\'\s a draw' : `The winner is ${wins.includes(p1 + p2) ? 'p1' : 'p2'}`
+}
+
+console.log(rpsThree('Paper', 'Rock'))
