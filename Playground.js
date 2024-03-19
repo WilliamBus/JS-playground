@@ -275,36 +275,69 @@
 // const arrTypesNew = arr => arr.map(x => typeof x)
 // console.log(arrTypesNew([1,3, "Ali", []]))
 
-//TODO - Create a function that takes 2-D arrays and returns the sum on min values in each row.
-/* NOTE - 2-D array
+// //TODO - Create a function that takes 2-D arrays and returns the sum on min values in each row.
+// /* NOTE - 2-D array
 
-ex: sumMinArrays([
-    [1,2,3,4,5],
-    [6,7,8,9,10],
-    [11,12,13,14,15]
-])
+// ex: sumMinArrays([
+//     [1,2,3,4,5],
+//     [6,7,8,9,10],
+//     [11,12,13,14,15]
+// ])
 
-output -> 1+6+11 = 18
-*/
+// output -> 1+6+11 = 18
+// */
 
-function sumMinArrays(arr) {
-    let sumTotal = 0;
+// function sumMinArrays(arr) {
+//     let sumTotal = 0;
 
+//     for (let i = 0; i < arr.length; i++) {
+//         let y = arr[i][0]
+
+//         for (let x = 0; x < arr[i].length; x++) {
+//             if (y > arr[i][x]) {
+//                 y = arr[i][x]
+//             }
+//         }
+//         sumTotal += y
+//     }
+    
+//     return sumTotal
+// }
+// console.log([sumMinArrays([
+//     [1,2,3,4,5],
+//     [6,7,8,9,10],
+//     [11,12,13,14,15]
+// ])])
+
+// //TODO - above in ES6
+// const sumMinArraysNew = arr => arr.reduce((a, b) => a + Math.min(...b),0)
+// console.log([sumMinArraysNew([
+//     [1,2,3,4,5],
+//     [6,7,8,9,10],
+//     [11,12,13,14,15]
+// ])])
+// //NOTE - reduce() = 
+// //NOTE - ... = 
+// //NOTE - Math.min() = 
+
+// TODO - Create an function that takes an array and return duplicate numbers in a new array
+//NOTE - ex: arraysDuplicateNumbers([1,2,3,4,5,6,5,1]) -> [5,1]
+//NOTE - ES5 - Not Working
+function duplicatedNumber(arr) {
+    const newArray = []
     for (let i = 0; i < arr.length; i++) {
-        let y = arr[i][0]
-
-        for (let x = 0; x < arr[i].length; x++) {
-            if (y > arr[i][x]) {
-                y = arr[i][x]
+        for (let x = i + 1; x < arr.length; x++) {
+            if (arr[i] === arr[x] && !newArray.includes(arr[1])) {
+                newArray.push(arr[i])
             }
         }
-        sumTotal += y
-    }
-    
-    return sumTotal
+    } 
+    return newArray
 }
-console.log([sumMinArrays([
-    [1,2,3,4,5],
-    [6,7,8,9,10],
-    [11,12,13,14,15]
-])])
+console.log(duplicatedNumber([1,2,3,4,5,6,5,1]))
+
+// //NOTE - ES6 - filters through the numbers in the console.log array looking for all the duplicate numbers
+// const ArrayDuplicateNumbers = arr => (
+//     arr= [...new Set([...arr.filter(num => arr.indexOf(num) !== arr.lastIndexOf(num))])].sort((a,b) => a-b), arr.length ? arr: null
+// )
+// console.log(ArrayDuplicateNumbers([1,2,3,4,5,6,5,1]))
