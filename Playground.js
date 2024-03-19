@@ -240,13 +240,71 @@
 
 // console.log(rpsTwo('Paper', 'Scissors'))
 
-//ANCHOR - JS buil in function includes().
-function rpsThree(p1, p2) {
-    const wins = ['RockScissors', 'PaperRock', 'ScissorsPaper']
+// //ANCHOR - JS built in function includes().
+// function rpsThree(p1, p2) {
+//     const wins = ['RockScissors', 'PaperRock', 'ScissorsPaper']
 
-    //NOTE - this line says: if the variable p1 is the exact same as the variable p2 it prints out "It's a draw" .
-    //NOTE - otherwise if it is they are not the same then it adds them together and says the winner is p1 or p2.
-    return p1 === p2 ? 'It\'\s a draw' : `The winner is ${wins.includes(p1 + p2) ? 'p1' : 'p2'}`
+//     //NOTE - this line says: if the variable p1 is the exact same as the variable p2 it prints out "It's a draw".
+//     //NOTE - otherwise if it is they are not the same then it adds them together and says the winner is p1 or p2.
+//     return p1 === p2 ? 'It\'\s a draw' : `The winner is ${wins.includes(p1 + p2) ? 'p1' : 'p2'}`
+// }
+
+// console.log(rpsThree('Paper', 'Rock'))
+
+// //SECTION - own function creation.
+// //TODO - Create a function that takes an array and return the types of the elements (data types) in a new array.
+// //NOTE - ex: arrTypes([1,3, "Ali", []]) -> ["number", "number", "string", "object"].
+// function returnElement(arr) {
+//     let array = []
+//     for (let i = 0; i < arr.length; i++) {
+//         array[i] = typeof(arr[i])
+//     }
+//     return array
+// }
+// console.log(returnElement([1,3, "Ali", []]))
+
+// //TODO - Compact the above.
+// function returnElement2(arr) {
+//     let array2 = []
+//     for (let i = 0; i < arr.length; i++) {array2[i] = typeof(arr[i])} return array2
+// }
+// console.log(returnElement2([1,3, "Ali", []]))
+
+// //TODO - write the compacted in ES6.
+// //NOTE - .map() function creates a new array with the results of calling a provided function on every element in the calling array.
+// const arrTypesNew = arr => arr.map(x => typeof x)
+// console.log(arrTypesNew([1,3, "Ali", []]))
+
+//TODO - Create a function that takes 2-D arrays and returns the sum on min values in each row.
+/* NOTE - 2-D array
+
+ex: sumMinArrays([
+    [1,2,3,4,5],
+    [6,7,8,9,10],
+    [11,12,13,14,15]
+])
+
+output -> 1+6+11 = 18
+*/
+
+function sumMinArrays(arr) {
+    let sumTotal = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+        let y = arr[i][0]
+
+        for (let x = 0; x < arr[i].length; x++) {
+            if (y > arr[i][x]) {
+                y = arr[i][x]
+            }
+        }
+        sumTotal += y
+    }
+    
+    return sumTotal
 }
-
-console.log(rpsThree('Paper', 'Rock'))
+console.log([sumMinArrays([
+    [1,2,3,4,5],
+    [6,7,8,9,10],
+    [11,12,13,14,15]
+])])
