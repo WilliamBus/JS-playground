@@ -320,21 +320,21 @@
 // //NOTE - ... = 
 // //NOTE - Math.min() = 
 
-// TODO - Create an function that takes an array and return duplicate numbers in a new array
-//NOTE - ex: arraysDuplicateNumbers([1,2,3,4,5,6,5,1]) -> [5,1]
-//NOTE - ES5 - Not Working
-function duplicatedNumber(arr) {
-    const newArray = []
-    for (let i = 0; i < arr.length; i++) {
-        for (let x = i + 1; x < arr.length; x++) {
-            if (arr[i] === arr[x] && !newArray.includes(arr[1])) {
-                newArray.push(arr[i])
-            }
-        }
-    } 
-    return newArray
-}
-console.log(duplicatedNumber([1,2,3,4,5,6,5,1]))
+// // TODO - Create an function that takes an array and return duplicate numbers in a new array
+// //NOTE - ex: arraysDuplicateNumbers([1,2,3,4,5,6,5,1]) -> [5,1]
+// //NOTE - ES5 - Not Working
+// function duplicatedNumber(arr) {
+//     const newArray = []
+//     for (let i = 0; i < arr.length; i++) {
+//         for (let x = i + 1; x < arr.length; x++) {
+//             if (arr[i] === arr[x] && !newArray.includes(arr[1])) {
+//                 newArray.push(arr[i])
+//             }
+//         }
+//     } 
+//     return newArray
+// }
+// console.log(duplicatedNumber([1,2,3,4,5,6,5,1]))
 
 // //NOTE - ES6 - filters through the numbers in the console.log array looking for all the duplicate numbers
 // const ArrayDuplicateNumbers = arr => (
