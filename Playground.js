@@ -193,8 +193,8 @@
 // //NOTE - runs onlyIntegers function and prints out the array written in the parrameter.
 // console.log(onlyIntegers(["will", 5, 6, "dog", 2, "pizza", 8]))
 
-// // TODO - Write a function that takes an array with numbers and return an array with the elements multiplied by 2.
-// // NOTE - arrayByTwo([2,5,4]) --> [4,10,8].
+// //TODO - Write a function that takes an array with numbers and return an array with the elements multiplied by 2.
+// //NOTE - arrayByTwo([2,5,4]) --> [4,10,8].
 // function operationMultiply(arr) {
 //     for (let i = 0; i < arr.length; i++) {
 //         arr[i] *= 2
@@ -320,7 +320,7 @@
 // //NOTE - ... = 
 // //NOTE - Math.min() = 
 
-// // TODO - Create an function that takes an array and return duplicate numbers in a new array
+// //TODO - Create an function that takes an array and return duplicate numbers in a new array
 // //NOTE - ex: arraysDuplicateNumbers([1,2,3,4,5,6,5,1]) -> [5,1]
 // //NOTE - ES5 - Not Working
 // function duplicatedNumber(arr) {
@@ -341,3 +341,57 @@
 //     arr= [...new Set([...arr.filter(num => arr.indexOf(num) !== arr.lastIndexOf(num))])].sort((a,b) => a-b), arr.length ? arr: null
 // )
 // console.log(ArrayDuplicateNumbers([1,2,3,4,5,6,5,1]))
+
+// //TODO - Create a function that takes an array of numbers or letters and return a string.
+// //NOTE - arrayToString([6,7,"Ali","Sonny",10]) -> ""
+// function arrayToString(arr) {
+//     let result = ""
+//     for (let i = 0; i < arr.length; i++) {
+//         result = result + arr[i]
+//     }
+//     return result
+// }
+// console.log(arrayToString([6,7,"Ali","Sonny",10]))
+
+// //TODO - Create a function that takes an array with numbers, transform that array into a mirror.
+// //NOTE - arrayToMirror([0,2,4,6,8]) output -> [0,2,4,6,8,6,4,2,0]
+// //NOTE - ES5
+// function arrayToMirror(arr) {
+//     for (let i = arr.length - 2; i >= 0; i--) {
+//         arr.push(arr[i])
+//     }
+//     return arr
+// }
+// console.log(arrayToMirror([0,2,4,6,8]))
+
+// //ES6
+// const toMirror = arr => [...arr, ...arr.reverse().slice(1)]
+// console.log(toMirror([0,2,4,6,8]))
+
+// //TODO - Create a function that returns the total number of arrays inside a given main array.
+// //NOTE - totalOfArrays([[1,2,3], [4,5,6]]) ->total number of arrays = 2
+// function totalOfArrays(arr) {
+//     let count = 0
+//     for (let i = 0; i < arr.length; i++) {
+//         if (Array.isArray(arr[i])) {
+//             count++
+//         }
+//     }
+//     return count
+// }
+// console.log(totalOfArrays([[1,2,3], [4,5,6], [7,8,9], 10, []]))
+
+// //TODO - Create a function that takes a number as an argument and returns an array of numbers counting down from the given number to zero.
+// //NOTE - Ex: arrayCountDown(5) output -> [5,4,3,2,1,0]
+// function arrayCountDown(num) {
+//     let array = []
+//     for (let i = num; i >= 0; i--) {
+//         array.push(i)
+//     }
+//     return array
+// }
+// console.log(arrayCountDown(5))
+
+//ES6 of ^
+const countDownArray = num => Array.from(Array(num + 1).keys()).reverse()
+console.log(countDownArray(10))
