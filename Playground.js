@@ -416,11 +416,8 @@ console.log(numCal(9, "/", 0));
 function calNum2(num1, operator, num2) {
     switch (operator) {
         case '+': return num1+num2;
-        break;
         case '-': return num1-num2;
-        break;
         case '*': return num1*num2;
-        break;
         case '/': return num1/num2;
         if (operator = '/' && num2 === 0) {
             "Can not divide by 0!"
