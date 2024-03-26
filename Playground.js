@@ -396,21 +396,21 @@
 // const countDownArray = num => Array.from(Array(num + 1).keys()).reverse()
 // console.log(countDownArray(10))
 
-//SECTION - Math
-//TODO - Create a function that takes two numbers and a math operator (+, -, /, *) and will perform a calculation with the given numbers.
-//NOTE - ex: cal (2, "+", 3) -> 5
-function calNum(num1, operator, num2) {
-    if(operator == '+') return num1+num2;
-    if(operator == '-') return num1-num2;
-    if(operator == '/' && num2 !=0) return num1/num2;
-    if(operator == '*') return num1*num2;
-    else return "Can not divide by 0!";
-}
-console.log(calNum(9, "*", 8));
+// //SECTION - Math
+// //TODO - Create a function that takes two numbers and a math operator (+, -, /, *) and will perform a calculation with the given numbers.
+// //NOTE - ex: cal (2, "+", 3) -> 5
+// function calNum(num1, operator, num2) {
+//     if(operator == '+') return num1+num2;
+//     if(operator == '-') return num1-num2;
+//     if(operator == '/' && num2 !=0) return num1/num2;
+//     if(operator == '*') return num1*num2;
+//     else return "Can not divide by 0!";
+// }
+// console.log(calNum(9, "*", 8));
 
-//TODO - Re-write the code above in ES6
-const numCal = (num1, operator, num2) => operator + num2 === "/0" ? "Can not divide by 0!" : eval(num1+operator+num2)
-console.log(numCal(9, "/", 0));
+// //TODO - Re-write the code above in ES6
+// const numCal = (num1, operator, num2) => operator + num2 === "/0" ? "Can not divide by 0!" : eval(num1+operator+num2)
+// console.log(numCal(9, "/", 0));
 
 //TODO - rewrite the ES5 with switch instead of if
 function calNum2(num1, operator, num2) {
