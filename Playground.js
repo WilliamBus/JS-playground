@@ -485,3 +485,30 @@
 //     new Date("March 26 2024"),
 //     new Date("March 30 2024")
 // ))
+
+// //SECTION - More Arrays.
+// //TODO - Create a function that takes an array of stringified numbers as a parameter and return an array of numbers.
+// //NOTE - EX: ["1", "3", "6.7"] -> [1, 3, 6.7]
+// //NOTE - (from Johan \/)
+// function destringifyArray(arr) {
+//     let temp = []
+//     for (let i = 0; i < arr.length; i++) {
+//         temp[i] = JSON.parse(arr[i])
+//     }
+//     return temp
+// }
+// console.log(destringifyArray(["1", "3", "6.7"]))
+
+// //NOTE - smaller ES5 of ^
+// //NOTE - (from frederick \/)
+// function destringify(arr) {
+//     return arr.map(Number)
+// }
+// console.log(destringify(["1", "3", "6.7"]))
+
+// //NOTE - ES6 of ^
+// let arrayToNumbers = arr => arr.map(e => +e)
+// console.log(arrayToNumbers(["1", "3", "6.7"]))
+
+//TODO - 
+//NOTE - EX:
