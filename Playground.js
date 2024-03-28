@@ -510,5 +510,55 @@
 // let arrayToNumbers = arr => arr.map(e => +e)
 // console.log(arrayToNumbers(["1", "3", "6.7"]))
 
-//TODO - 
-//NOTE - EX:
+// //TODO - Create a function that returns (true) if all parameters are truthy and false otherwise.
+// //NOTE - EX: checkParam(true, true, ture) -> true.
+// //NOTE - EX2: checkParam(5, 1, 3, 0) -> false.
+// //NOTE - Falsy values are: false, 0 and "" (empty string) everything esle is true.
+// //NOTE - (from caden\/)
+// function checkParam(arr) {
+//     let value = false
+//     for (let i = 0; i < arr.length; i++) {
+//         if (arr[i] !== 0 && !arr[i] !== false && arr[i] !== "") {
+//            value = true
+//         }
+//     }
+//     return value
+// }
+// console.log(checkParam(0, 5, 3, 9))
+
+// //NOTE - (from Johan\/) (good for limited parameters)
+// function checkParam3(param1, param2, param3, param4) {
+//     if (param1 && param2 && param3 && param4) {
+//         return true
+//     } else {
+//         return false
+//     }
+// }
+// console.log(checkParam3("cheap", "Seven", "Cheese", "bob"))
+
+// //NOTE - ES6 of ^
+// const checkParam2 = (...args) => args.every(Boolean)
+// console.log(checkParam2(5,1,0,3))
+
+// //TODO - Create a function to check if an array contains a particuler number.
+// //NOTE - EX: checkArray([5,5,6], 5) -> true
+// //NOTE - EX2: checkArray([1,3,5,7,10], 2) -> false
+// //NOTE - (I DID THIS ONE AND IT WORKED AND WE USED IT AS THE EXAMPLE IN CLASS)
+function checkArray(arr, num) {
+        if (arr.includes(num)) {
+            return true 
+        } else return false
+}
+console.log(checkArray([6,[],7],5))
+
+// //NOTE - (from nathanie doesn't work as good as mine)
+// function checkArray2(arr, x) {
+//     for (let i=0; i < arr.length; i++) {
+//         if(arr[i] == x) {
+//             return true
+//         } else {
+//             return false
+//         }
+//     }
+// }
+// console.log(checkArray2([[],6,7],6))
